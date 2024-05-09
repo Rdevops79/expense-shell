@@ -1,4 +1,6 @@
  dnf install nginx -y
+ cp expense.conf /etc/nginx/default.d/expense.conf
+
  systemctl enable nginx
  systemctl start nginx
  rm -rf /usr/share/nginx/html/*
@@ -9,5 +11,4 @@
  ls -l
  pwd
 
- cp expense.conf /etc/nginx/default.d/expense.conf
  systemctl restart nginx
