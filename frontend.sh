@@ -17,3 +17,4 @@
  echo -e"\e[36mrestart service\e[0m"
  systemctl restart nginx
  systemctl enable nginx
+ echo -e "\e[31mHello World\e[0m"
