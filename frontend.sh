@@ -6,4 +6,4 @@
  cd /usr/share/nginx/html
  unzip /tmp/frontend.zip
  # copy the file step pending
- systemctl resta rt nginx
+ systemctl restart nginx
