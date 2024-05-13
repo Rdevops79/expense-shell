@@ -7,5 +7,5 @@ systemctl start mysqld
 echo exit status-$?
 echo -e "\e[31mSet Root Password\e[0m"
 mysql_secure_installation --set-root-pass $1
-## PASSWORD-ExPensse@1
+## PASSWORD-ExPenseApp@1
 echo exit status-$?
