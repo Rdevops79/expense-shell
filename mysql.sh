@@ -1,11 +1,16 @@
-echo -e "\e[31mInstalling MySQL server\e[0m"
+source common.sh
+rm -f /tmp/expense.log
+
+HEADING Installing MySQL Server
 dnf install mysql-server -y
 echo exit status-$?
-echo -e "\e[31mStart Nginx Server\e[0m"
+
+HEADINB Start Nginx Server
 systemctl enable mysqld
 systemctl start mysqld
 echo exit status-$?
-echo -e "\e[31mSet Root Password\e[0m"
+
+HEADING Set Root Password
 mysql_secure_installation --set-root-pass $1
 ## PASSWORD-ExPenseApp@1
 echo exit status-$?
