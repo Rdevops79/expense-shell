@@ -7,15 +7,30 @@ if [ -z "$1" ]; then
 fi
 
 HEADING Installing MySQL Server
-dnf install mysql-server -y
-echo exit status-$?
+dnf install mysql-server -y &>>/tmp/expense.log
+if [ $? -eq 0]then
+  echo SUCCESS
+  else
+    echo FAILURE
+    EXIT2
+fi
 
 HEADINB Start Nginx Server
-systemctl enable mysqld
-systemctl start mysqld
-echo exit status-$?
+systemctl enable mysqld &>>/tmp/expense.log
+systemctl start mysqld &>>/tmp/expense.log
+if [ $? -eq 0]then
+  echo SUCCESS
+  else
+    echo FAILURE
+    EXIT2
+fi
 
 HEADING Set Root Password
-mysql_secure_installation --set-root-pass $1
+mysql_secure_installation --set-root-pass $1 &>>/tmp/expense.log
 ## PASSWORD-ExPenseApp@1
-echo exit status-$?
+if [ $? -eq 0]then
+  echo SUCCESS
+  else
+    echo FAILURE
+    EXIT2
+fi
