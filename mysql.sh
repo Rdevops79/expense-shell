@@ -10,12 +10,12 @@ HEADING Installing MySQL Server
 dnf install mysql-server -y &>>/tmp/expense.log
 STAT $?
 
-HEADING Start nginx Server
+HEADING Start MySQL Server
 systemctl enable mysqld &>>/tmp/expense.log
 systemctl start mysqld &>>/tmp/expense.log
 STAT $?
 
 HEADING Set Root Password
 mysql_secure_installation --set-root-pass $1 &>>/tmp/expense.log
-## PASSWORD-ExPenseApp@1
+## PA
 STAT $?
